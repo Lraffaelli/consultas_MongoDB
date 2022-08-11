@@ -1,0 +1,236 @@
+myFirstDatabase> use ecommerce
+switched to db ecommerce
+
+ ecommerce> db.createCollection("productos")
+{ ok: 1 }
+ ecommerce> db.createCollection("mensajes")
+{ ok: 1 }
+
+ecommerce> show collections
+mensajes
+productos
+
+1) ecommerce> db.productos.insertMany([
+  {
+    "title": "Planisferio",
+    "price": 120.32,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-48.png",
+    
+  },
+  {
+    "title": "microscopio",
+    "price": 223.5,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/microscope-lab-science-school-48.png",
+    
+  },
+  {
+    "title": "Recipiente Laboratorio",
+    "price": 223.5,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/tube-lab-science-school-48.png",
+    
+  },
+  {
+    "title": "Calculadora",
+    "price": 423.5,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-48.png",
+    
+  },
+  {
+    "title": "Reloj",
+    "price": 53.5,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-48.png",
+    
+  },
+  {
+    "title": "Mochila",
+    "price": "346",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/bag-pack-container-school-48.png",
+    
+  },
+  {
+    "title": "Lapiz",
+    "price": 223.5,
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/pencil-pen-stationery-school-48.png",
+    
+  },
+  {
+    "title": "Escuadra",
+    "price": "217",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-48.png",
+    
+  },
+  {
+    "title": "Pizarron",
+    "price": "274",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/board-math-class-school-48.png",
+    
+  },
+  {
+    "title": "casa Roja",
+    "price": "318",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/bag-pack-container-school-48.png",
+    
+  }
+])
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("62f454d02002c824fdb27b36"),
+    '1': ObjectId("62f454d02002c824fdb27b37"),
+    '2': ObjectId("62f454d02002c824fdb27b38"),
+    '3': ObjectId("62f454d02002c824fdb27b39"),
+    '4': ObjectId("62f454d02002c824fdb27b3a"),
+    '5': ObjectId("62f454d02002c824fdb27b3b"),
+    '6': ObjectId("62f454d02002c824fdb27b3c"),
+    '7': ObjectId("62f454d02002c824fdb27b3d"),
+    '8': ObjectId("62f454d02002c824fdb27b3e"),
+    '9': ObjectId("62f454d02002c824fdb27b3f")
+  }
+}
+
+2)ecommerce> db.productos.find({price:500 } )
+[
+  {
+    _id: ObjectId("62f454d02002c824fdb27b37"),
+    title: 'microscopio',
+    price: 500,
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/microscope-lab-science-school-48.png'
+  }
+]
+
+3)ecommerce>  db.productos.find()
+[
+  {
+    _id: ObjectId("62f454d02002c824fdb27b36"),
+    title: 'Planisferio',
+    price: 120,
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-48.png'
+  },
+  {
+    _id: ObjectId("62f454d02002c824fdb27b37"),
+    title: 'microscopio',
+    price: 500,
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/microscope-lab-science-school-48.png'
+  },
+  {
+    _id: ObjectId("62f454d02002c824fdb27b38"),
+    title: 'Recipiente Laboratorio',
+    price: 750,
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/tube-lab-science-school-48.png'
+  },
+  {
+    _id: ObjectId("62f454d02002c824fdb27b39"),
+    title: 'Calculadora',
+    price: 1200,
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-48.png'
+  },
+  {
+    _id: ObjectId("62f454d02002c824fdb27b3a"),
+    title: 'Reloj',
+    price: 3000,
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-48.png'
+  },
+  {
+    _id: ObjectId("62f454d02002c824fdb27b3b"),
+    title: 'Mochila',
+    price: '4800',
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/bag-pack-container-school-48.png'
+  },
+  {
+    _id: ObjectId("62f454d02002c824fdb27b3c"),
+    title: 'Lapiz',
+    price: 350,
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/pencil-pen-stationery-school-48.png'
+  },
+  {
+    _id: ObjectId("62f454d02002c824fdb27b3d"),
+    title: 'Escuadra',
+    price: '1800',
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-48.png'
+  },
+  {
+    _id: ObjectId("62f454d02002c824fdb27b3e"),
+    title: 'Pizarron',
+    price: '3900',
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/board-math-class-school-48.png'
+  },
+  {
+    _id: ObjectId("62f454d02002c824fdb27b3f"),
+    title: 'casa Roja',
+    price: '2500',
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/bag-pack-container-school-48.png'
+  }
+]
+
+4)  ecommerce> db.productos.find().count()
+    10
+5)
+	a)  db.productos.insertOne({title:'Reposera',price:2100,thumbnail:'http//nuevaimagen.jpg'})
+		{
+  		  acknowledged: true,
+  		  insertedId: ObjectId("62f459812002c824fdb27b41")
+		}
+	b)i) ecommerce> db.productos.find({"price":{$lte:1000}})
+[
+  {
+    _id: ObjectId("62f454d02002c824fdb27b36"),
+    title: 'Planisferio',
+    price: 120,
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-48.png'
+  },
+  {
+    _id: ObjectId("62f454d02002c824fdb27b37"),
+    title: 'microscopio',
+    price: 500,
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/microscope-lab-science-school-48.png'
+  },
+  {
+    _id: ObjectId("62f454d02002c824fdb27b38"),
+    title: 'Recipiente Laboratorio',
+    price: 750,
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/tube-lab-science-school-48.png'
+  },
+  {
+    _id: ObjectId("62f454d02002c824fdb27b3c"),
+    title: 'Lapiz',
+    price: 350,
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/pencil-pen-stationery-school-48.png'
+  }
+]
+
+
+
+
+ii) ecommerce> db.productos.find({ $and: [{ "price": {$gte: 1000}}, {"price": {$lte: 3000}} ]})
+
+[
+  {
+    _id: ObjectId("62f454d02002c824fdb27b39"),
+    title: 'Calculadora',
+    price: 1200,
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-48.png'
+  },
+  {
+    _id: ObjectId("62f454d02002c824fdb27b3a"),
+    title: 'Reloj',
+    price: 3000,
+    thumbnail: 'https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-48.png'
+  },
+  {
+    _id: ObjectId("62f458e92002c824fdb27b40"),
+    title: 'Taza Mog',
+    price: 2100,
+    thumbnail: 'http//nuevaimagen.jpg'
+  },
+  {
+    _id: ObjectId("62f459812002c824fdb27b41"),
+    title: 'Reposera',
+    price: 2100,
+    thumbnail: 'http//nuevaimagen.jpg'
+  }
+]
+
+iii)db.productos.find({ "price": {$gt: 3000}}})
+
+iv)
